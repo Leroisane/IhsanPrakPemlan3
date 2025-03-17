@@ -5,25 +5,29 @@ import praktic.geometry.shapes.Rectangle;
 import java.util.Scanner;
 
 public class Main {
-        static String pewarnaTulisan = "=============================="; // Pembatas untuk output
+        static String WHITE = "\u001B[0m";
+        static String GREEN = "\u001B[32m";
+        static String YELLOW = "\u001B[33m";
+        static String BLUE = "\u001B[94m";
+        static String pewarnaTulisan = GREEN + "==============================" + WHITE;
 
         public static void printGaris() {
-                System.out.println(pewarnaTulisan); // Mencetak garis pembatas
+                System.out.println(pewarnaTulisan);
         }
 
         public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in); // Scanner untuk input pengguna
-                System.out.println("Isikan nama anda  :"); // Menanyakan nama pengguna
-                String Nama = sc.nextLine(); // Kolom input nama pengguna
-                System.out.println("isikan NIM anda  :"); // Menanyakan NIM pengguna
-                String NIM = sc.nextLine(); // Kolom input NIM pengguna
+                Scanner sc = new Scanner(System.in);
+
+                System.out.println("Isikan Nama anda: ");
+                String nama = sc.nextLine();
+                System.out.println("Isikan NIM anda: ");
+                String NIM = sc.nextLine();
 
                 printGaris();
-                System.out.println("Nama : " + Nama);
+                System.out.println("Nama : " + nama);
                 System.out.println("NIM  : " + NIM);
                 printGaris();
 
-                // Input dan proses untuk Circle
                 System.out.println("Circle");
                 printGaris();
                 System.out.print("Isikan ID       : ");
@@ -32,14 +36,13 @@ public class Main {
                 double radius = sc.nextDouble();
 
                 Circle circle = new Circle();
-                circle.setId(idCircle); // Menetapkan ID lingkaran
-                circle.setRadius(radius); // Menetapkan radius lingkaran
+                circle.setId(idCircle);
+                circle.setRadius(radius);
 
                 printGaris();
-                circle.printDeskripsi(); // Menampilkan deskripsi lingkaran
+                circle.printDeskripsi();
                 printGaris();
 
-                // Input dan proses untuk Rectangle
                 System.out.println("Rectangle");
                 printGaris();
                 System.out.print("Isikan ID       : ");
@@ -52,9 +55,7 @@ public class Main {
                 Rectangle rectangle = new Rectangle(idRectangle, panjang, lebar);
 
                 printGaris();
-                rectangle.printDeskripsi(); // Menampilkan deskripsi persegi panjang
+                rectangle.printDeskripsi();
                 printGaris();
-
-                sc.close();
         }
 }
