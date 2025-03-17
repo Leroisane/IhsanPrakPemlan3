@@ -57,5 +57,7 @@ public class Main {
                 printGaris();
                 rectangle.printDeskripsi();
                 printGaris();
+
+                sc.close();
         }
 }
